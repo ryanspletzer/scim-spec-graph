@@ -42,7 +42,9 @@ graph TD
 ## Relationships Explained
 
 ### RFC 7642 → RFC 7643 & RFC 7644
+
 RFC 7642 is the conceptual foundation that establishes:
+
 - What SCIM is and why it exists
 - Key terminology and definitions
 - Use cases and requirements
@@ -51,13 +53,17 @@ RFC 7642 is the conceptual foundation that establishes:
 Both the schema (RFC 7643) and protocol (RFC 7644) are built upon these foundations.
 
 ### RFC 7643 → RFC 7644
+
 The protocol specification (RFC 7644) references and uses the schema specification (RFC 7643):
+
 - The protocol defines how to manipulate resources
 - The schema defines what those resources look like
 - You need to understand the schema to properly implement the protocol
 
 ### RFC 7643 & RFC 7644 → RFC 9865
+
 RFC 9865 extends both the schema and protocol:
+
 - Adds new query parameters to the protocol
 - Adds new attributes to resource representations in the schema
 - Provides cursor-based pagination as an alternative to index-based pagination

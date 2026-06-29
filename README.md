@@ -40,12 +40,14 @@ See [Graph.md](Graph.md) for the visual representation of how these specificatio
 ## Why This Matters
 
 When implementing SCIM in your applications:
+
 - Understanding RFC 7642 helps you grasp the overall concepts and requirements
 - RFC 7643 tells you how to structure your user and group data
 - RFC 7644 shows you how to build the API endpoints and operations
 - RFC 9865 provides modern pagination capabilities for scalability
 
 The relationships between these specifications matter because:
+
 - You can't implement the protocol (RFC 7644) without understanding the schema (RFC 7643)
 - Both protocol and schema are based on the concepts in RFC 7642
 - RFC 9865 builds on top of both schema and protocol to add advanced features
