@@ -16,6 +16,9 @@ graph TD
     %% Pagination Extension
     RFC9865["<a href='https://www.rfc-editor.org/rfc/rfc9865'>RFC 9865</a><br/>Cursor-Based Pagination<br/>of SCIM Resources"]
     
+    %% Agentic Identity Extension (Draft)
+    SCIM_AgentSchema["<a href='https://datatracker.ietf.org/doc/html/draft-wahl-scim-agent-schema-01'>draft-wahl-scim-agent-schema-01</a><br/>SCIM: Agentic Identity Schema<br/>(Draft)"]
+    
     %% Styling
     classDef foundation fill:#e1f5ff,stroke:#01579b,stroke-width:2px
     classDef core fill:#fff9c4,stroke:#f57f17,stroke-width:2px
@@ -24,6 +27,7 @@ graph TD
     class RFC7642 foundation
     class RFC7643,RFC7644 core
     class RFC9865 extension
+    class SCIM_AgentSchema extension
     
     %% Dependencies
     RFC7642 -->|"Defines concepts<br/>and requirements"| RFC7643
@@ -31,6 +35,8 @@ graph TD
     RFC7643 -->|"Schemas used by"| RFC7644
     RFC7643 -->|"Updates with<br/>pagination attributes"| RFC9865
     RFC7644 -->|"Updates with<br/>pagination support"| RFC9865
+    RFC7643 -->|"Extends with<br/>agent resource schema"| SCIM_AgentSchema
+    RFC7644 -->|"Provisions agents<br/>via SCIM protocol"| SCIM_AgentSchema
 ```
 
 ## Legend
@@ -69,6 +75,19 @@ RFC 9865 extends both the schema and protocol:
 - Provides cursor-based pagination as an alternative to index-based pagination
 - Maintains backward compatibility with existing implementations
 
+### RFC 7643 & RFC 7644 → SCIM Agentic Identity Schema (Draft)
+
+The agentic identity schema draft (draft-wahl-scim-agent-schema) extends both
+the schema and protocol to cover AI agent identities:
+
+- Defines a new `AgenticIdentity` resource type on top of the core schema
+- Adds agent-specific attributes (e.g. OAuth client identifiers, application
+  IDs) for provisioning autonomous agents
+- Reuses the existing SCIM protocol to provision, authenticate, and authorize
+  agents
+- Status: individual Internet-Draft (not yet WG-adopted); revision -01 is
+  expired/archived, so treat it as exploratory rather than stable
+
 ## Reading Order
 
 If you're new to SCIM, we recommend reading the specifications in this order:
@@ -77,6 +96,7 @@ If you're new to SCIM, we recommend reading the specifications in this order:
 2. **RFC 7643** - Learn about the data structures and resource types
 3. **RFC 7644** - Understand the API operations and protocol details
 4. **RFC 9865** - Learn about advanced pagination techniques for large-scale deployments
+5. **draft-wahl-scim-agent-schema** - Optional, exploratory: how SCIM is being extended to provision AI agent identities
 
 ## Implementation Checklist
 
@@ -89,3 +109,4 @@ When implementing SCIM, ensure you:
 - [ ] Consider cursor-based pagination from RFC 9865 for large datasets
 - [ ] Support bulk operations if needed (RFC 7644)
 - [ ] Implement proper error handling (RFC 7644)
+- [ ] Track the agentic identity schema draft (draft-wahl-scim-agent-schema) if provisioning AI agent identities

@@ -33,6 +33,11 @@ SCIM is a standardized approach for automating the exchange of user identity inf
   - Defines cursor-based pagination for SCIM queries and results
   - Improves performance and efficiency for large-scale scenarios
 
+- **[draft-wahl-scim-agent-schema](https://datatracker.ietf.org/doc/html/draft-wahl-scim-agent-schema-01)**: System for Cross-domain Identity Management: Agentic Identity Schema (Draft)
+  - Extends RFC 7643 and RFC 7644 to provision AI agent identities via SCIM
+  - Defines an `AgenticIdentity` resource type with agent-specific attributes (e.g. OAuth client and application identifiers)
+  - Individual Internet-Draft (not WG-adopted); revision -01 is expired/archived, so treat it as exploratory
+
 ## The Graph
 
 See [Graph.md](Graph.md) for the visual representation of how these specifications relate to each other.
